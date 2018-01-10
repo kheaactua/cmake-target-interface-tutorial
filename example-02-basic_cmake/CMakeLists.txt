@@ -8,8 +8,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++11")
 set(VENDOR_DIR ${CMAKE_SOURCE_DIR}/../vendor CACHE PATH "Path to Vendors")
 set(EXTRA_LIB_BASE_DIR ${VENDOR_DIR}/extra CACHE PATH "Path to Extra Lib")
 
+link_directories(${EXTRA_LIB_BASE_DIR})
+
 add_executable(app main.cpp)
 target_include_directories(app PUBLIC ${EXTRA_LIB_BASE_DIR}/include)
-target_link_libraries(app ${EXTRA_LIB_BASE_DIR}/libextra.a)
+target_link_libraries(app extra)
 
 # vim: ts=2 sw=2 sts=2 noet ffs=unix ft=cmake :
