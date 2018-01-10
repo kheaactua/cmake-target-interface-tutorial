@@ -18,7 +18,7 @@ The second example sets the project up with CMake.  The CMake code here also man
 cd example-02-basic_cmake
 mkdir bld
 cd bld
-cmake -GNinha ..
+cmake -GNinja ..
 ninja
 ```
 
@@ -31,7 +31,7 @@ The third example builds on the second example where a *Find* script script is w
 cd example-02-cmake
 mkdir bld
 cd bld
-cmake -GNinha ..
+cmake -GNinja ..
 ninja
 ```
 
