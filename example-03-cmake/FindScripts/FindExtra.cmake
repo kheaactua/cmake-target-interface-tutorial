@@ -33,9 +33,16 @@ if (NOT TARGET Extra)
 	endif()
 
 	add_library(Extra INTERFACE)
-	set_property(TARGET Extra PROPERTY INTERFACE_SYSTEM_INCLUDE_DIRECTORIES ${EXTRA_LIB_INCLUDE_DIR})
+
+	# Include Path
 	set_property(TARGET Extra PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${EXTRA_LIB_INCLUDE_DIR})
 
+	# Because ExtraLib is considered a third party vendor, we can add it to the
+	# system path which will result in the compiler not providing warnings from
+	# ExtraLib code when compiling against it.
+	set_property(TARGET Extra PROPERTY INTERFACE_SYSTEM_INCLUDE_DIRECTORIES ${EXTRA_LIB_INCLUDE_DIR})
+
+	# Lib path
 	target_link_libraries(Extra INTERFACE ${EXTRA_LIB_LIB})
 endif()
 
