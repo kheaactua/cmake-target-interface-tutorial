@@ -30,7 +30,7 @@ The third example builds on the second example where a *Find* script script is w
 
 **Building**:
 ```sh
-cd example-02-cmake
+cd example-03-cmake
 mkdir bld
 cd bld
 cmake -GNinja ..
